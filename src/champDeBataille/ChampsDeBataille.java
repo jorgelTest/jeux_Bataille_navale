@@ -9,7 +9,7 @@ public class ChampsDeBataille {
 
     private ArrayList<BateauGenerique> bateauxSurLeChamp;
     private ArrayList<Coordonnee> tirsReussis;
-    private Coordonnee tir;
+    private Coordonnee coordoneeTir;
 
     public ChampsDeBataille() {
         bateauxSurLeChamp = new ArrayList<BateauGenerique>();
@@ -20,23 +20,23 @@ public class ChampsDeBataille {
         this.bateauxSurLeChamp.add(bateau);
     }
 
-    public void tirer(Coordonnee tir) {
-        this.tir = tir;
+    public void tirer(Coordonnee coordoneeTir) {
+        this.coordoneeTir = coordoneeTir;
         boolean disp = false;
 
         if (this.getTirsReussis().size() == 0) {
-            this.getTirsReussis().add(tir);
+            this.getTirsReussis().add(coordoneeTir);
             disp = true;
         } else {
             for (int i = 0; i < this.getTirsReussis().size(); i++) {
-                if (getTir().equals(this.getTirsReussis().get(i))) {
+                if (getCoordoneeTir().equals(this.getTirsReussis().get(i))) {
                     System.out.println("Le tir a été effectué");
                     disp = false;
                     break;
                 } else {
                     System.out.println("Nouveau tir");
                     disp = true;
-                    this.getTirsReussis().add(tir);
+                    this.getTirsReussis().add(coordoneeTir);
                     break;
                 }
             }
@@ -45,7 +45,7 @@ public class ChampsDeBataille {
         if (disp) {
             for (int i = 0; i < bateauxSurLeChamp.size(); i++) {
                 this.bateauxSurLeChamp.get(i).verifierQueBateauCoule();
-                if (bateauxSurLeChamp.get(i).verifierTir(this.getTir())) {
+                if (bateauxSurLeChamp.get(i).verifierTir(this.getCoordoneeTir())) {
                     System.out.println("Tir réussi");
                     break;
                 } else {
@@ -80,12 +80,12 @@ public class ChampsDeBataille {
         this.tirsReussis = tirsReussis;
     }
 
-    public Coordonnee getTir() {
-        return tir;
+    public Coordonnee getCoordoneeTir() {
+        return coordoneeTir;
     }
 
-    public void setTir(Coordonnee tir) {
-        this.tir = tir;
+    public void setCoordoneeTir(Coordonnee coordoneeTir) {
+        this.coordoneeTir = coordoneeTir;
     }
 
 
