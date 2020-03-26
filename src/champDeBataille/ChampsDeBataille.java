@@ -16,8 +16,8 @@ public class ChampsDeBataille {
         tirsReussis = new ArrayList<Coordonnee>();
     }
 
-    public void ajouterBateau(BateauGenerique barco) {
-        this.bateauxSurLeChamp.add(barco);
+    public void ajouterBateau(BateauGenerique bateau) {
+        this.bateauxSurLeChamp.add(bateau);
     }
 
     public void tirer(Coordonnee tir) {
