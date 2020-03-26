@@ -7,6 +7,6 @@ public class Sousmarin extends BateauGenerique {
 
     public Sousmarin(boolean direction) {
         super(direction);
-        super.setTaille(SOUSMARIN.getTaille());
+        this.setTaille(SOUSMARIN.getTaille());
     }
 }

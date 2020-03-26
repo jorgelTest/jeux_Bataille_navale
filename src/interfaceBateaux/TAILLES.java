@@ -12,7 +12,5 @@ public enum TAILLES {
     public int getTaille() {
         return taille;
     }
-    public int getSizz() {
-        return 5;
-    }
+
 }

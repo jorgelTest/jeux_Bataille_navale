@@ -25,14 +25,14 @@ public class Main {
         //Bateau 5
         Sousmarin sub = new Sousmarin(true);
 
-        //Agregar barcos
+        //Ajouter les bateaux
         champs.ajouterBateau(bb);
         champs.ajouterBateau(inter);
         champs.ajouterBateau(pat);
         champs.ajouterBateau(porta);
         champs.ajouterBateau(sub);
 
-        //Imprimir barcos
+        //Imprimer les bateaux
         champs.afficherBateaux();
 
         while(!(bb.verifierQueBateauCoule() && inter.verifierQueBateauCoule() && pat.verifierQueBateauCoule() && porta.verifierQueBateauCoule() && sub.verifierQueBateauCoule())){
@@ -41,7 +41,7 @@ public class Main {
             System.out.println("Donne coordonnee Y");
             corY = t.nextInt();
             tir = new Coordonnee(corX,corY);
-            System.out.println("Tu tir fue en: " + tir);
+            System.out.println("Le tir était en : " + tir);
 
             champs.tirer(tir);
 

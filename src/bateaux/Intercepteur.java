@@ -7,6 +7,6 @@ public class Intercepteur extends BateauGenerique {
 
     public Intercepteur(boolean direction) {
         super(direction);
-        super.setTaille(INTERCEPTEUR.getTaille());
+        this.setTaille(INTERCEPTEUR.getTaille());
     }
 }

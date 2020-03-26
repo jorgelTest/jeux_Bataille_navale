@@ -7,6 +7,6 @@ public class Bateau extends BateauGenerique {
 
     public Bateau(boolean direction) {
         super(direction);
-        super.setTaille(BATEAU.getTaille());
+        this.setTaille(3);
     }
 }
