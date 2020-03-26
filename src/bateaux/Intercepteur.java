@@ -1,14 +1,12 @@
 package bateaux;
 
+import interfaceBateaux.ConstructionBateau;
+import static interfaceBateaux.TAILLES.INTERCEPTEUR;
 
-import coordonnees.Coordonnee;
-import interfaceBateaux.InterfaceBateau;
+public class Intercepteur extends ConstructionBateau {
 
-
-import java.util.Arrays;
-import java.util.Random;
-
-public class Intercepteur  {
-
-
+    public Intercepteur(boolean direction) {
+        super(direction);
+        super.setTaille(INTERCEPTEUR.getTaille());
+    }
 }

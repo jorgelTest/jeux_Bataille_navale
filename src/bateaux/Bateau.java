@@ -1,23 +1,15 @@
 package bateaux;
 
+import interfaceBateaux.ConstructionBateau;
+import static interfaceBateaux.TAILLES.BATEAU;
 
-import coordonnees.Coordonnee;
-import interfaceBateaux.BateauAbstrait;
-import interfaceBateaux.InterfaceBateau;
-
-import java.util.Arrays;
-import java.util.Random;
-
-public class Bateau extends BateauAbstrait {
-
-    private final Integer TAILLE = 5;
+public class Bateau extends ConstructionBateau {
 
     public Bateau(boolean direction) {
         super(direction);
-        this.setCoordonnees(new Coordonnee[this.TAILLE]);
+        super.setTaille(BATEAU.getTaille());
     }
-    public Bateau(boolean direction) {
-        super(direction);
-        this.setCoordonnees(new Coordonnee[this.TAILLE]);
-    }
+
+
+
 }

@@ -1,23 +1,26 @@
 package interfaceBateaux;
+
 import coordonnees.Coordonnee;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public abstract class BateauAbstrait {
-    private final Integer TAILLE =0;
+public abstract class ConstructionBateau {
+    private Integer taille;
     private boolean direction;
     private Coordonnee[] coordonnees;
-    private Integer vie = TAILLE;
+    private Integer vie = taille;
+
     /**
      * Constructeur qui recoit un boolean qui aidera avec la direction du bateau
      * true = horizontal,
      * false = vertical
+     *
      * @param direction
      */
-    public BateauAbstrait(boolean direction) {
+    public ConstructionBateau(boolean direction) {
         this.direction = direction;
-        this.coordonnees = new Coordonnee[this.TAILLE];
+        this.coordonnees = new Coordonnee[this.getTaille()];
         this.genererBateau();
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -28,20 +31,21 @@ public abstract class BateauAbstrait {
         Random r = new Random();
         Integer pos = r.nextInt(10);
         //Integer auxY = r.nextInt(10);
-        while (!(pos + TAILLE < 10)) {
+        while (!(pos + taille < 10)) {
             pos = r.nextInt(10);
         }
         //Horizontal X
         if (this.direction) {
-            for (int i = pos, j = 0; i < pos + TAILLE; i++, j++) {
+            for (int i = pos, j = 0; i < pos + taille; i++, j++) {
                 coordonnees[j] = new Coordonnee(i, pos);
             }
         } else {//ou vertical Y
-            for (int i = pos, j = 0; i < pos + TAILLE; i++, j++) {
+            for (int i = pos, j = 0; i < pos + taille; i++, j++) {
                 coordonnees[j] = new Coordonnee(pos, i);
             }
         }
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public boolean verifierTir(Coordonnee tir) {
         // TODO Auto-generated method stub
@@ -59,6 +63,7 @@ public abstract class BateauAbstrait {
         }
         return tirReussi;
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public boolean verifierQueBateauCoule() {
         if (this.vie == 0) {
@@ -67,38 +72,50 @@ public abstract class BateauAbstrait {
             return false;
         }
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public Integer getVie() {
         return vie;
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public void setVie(Integer vie) {
         this.vie = vie;
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public boolean isDireccion() {
         return direction;
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public void setDireccion(boolean direccion) {
         this.direction = direccion;
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public Coordonnee[] getCoordonnees() {
         return coordonnees;
     }
+
     //------------------------------------------------------------------------------------------------------------------
     public void setCoordonnees(Coordonnee[] coordonnees) {
         this.coordonnees = coordonnees;
     }
+
     //------------------------------------------------------------------------------------------------------------------
-    public Integer getTaille() {
-        return TAILLE;
+    public void setTaille(Integer taille) {
+        this.taille = taille;
     }
+
+    public Integer getTaille() {
+        return taille;
+    }
+
     //------------------------------------------------------------------------------------------------------------------
     @Override
     public String toString() {
-        return this.getClass().getName() + "[TAILLE=" + TAILLE + ", direccion=" + direction
+        return this.getClass().getName() + "[TAILLE=" + taille + ", direccion=" + direction
                 + ", coordonnées=" + Arrays.toString(coordonnees) + "]";
     }
 }
