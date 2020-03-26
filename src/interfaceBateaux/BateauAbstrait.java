@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public abstract class BateauAbstrait {
-    private final Integer TAILLE=0;
+    private final Integer TAILLE =0;
     private boolean direction;
     private Coordonnee[] coordonnees;
     private Integer vie = TAILLE;
@@ -17,6 +17,7 @@ public abstract class BateauAbstrait {
      */
     public BateauAbstrait(boolean direction) {
         this.direction = direction;
+        this.coordonnees = new Coordonnee[this.TAILLE];
         this.genererBateau();
     }
     //------------------------------------------------------------------------------------------------------------------

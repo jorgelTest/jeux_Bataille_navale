@@ -16,5 +16,8 @@ public class Bateau extends BateauAbstrait {
         super(direction);
         this.setCoordonnees(new Coordonnee[this.TAILLE]);
     }
-
+    public Bateau(boolean direction) {
+        super(direction);
+        this.setCoordonnees(new Coordonnee[this.TAILLE]);
+    }
 }
