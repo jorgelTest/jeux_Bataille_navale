@@ -12,7 +12,7 @@ public class ChampsDeBataille {
     private Coordonnee tir;
 
     public ChampsDeBataille() {
-        bateauxSurLeChamp = new ArrayList<>();
+        bateauxSurLeChamp = new ArrayList<BateauGenerique>();
         tirsReussis = new ArrayList<Coordonnee>();
     }
 
