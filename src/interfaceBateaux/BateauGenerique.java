@@ -9,7 +9,7 @@ public abstract class BateauGenerique {
     private Integer taille;
     private boolean direction;
     private Coordonnee[] coordonnees;
-    private Integer vie = taille;
+    private Integer vie;
 
     /**
      * Constructeur qui recoit un boolean qui aidera avec la direction du bateau
@@ -33,6 +33,7 @@ public abstract class BateauGenerique {
             this.setTaille(TAILLES.SOUSMARIN.getTaille());
         }
         this.coordonnees = new Coordonnee[this.getTaille()];
+        this.setVie(this.getTaille());
         this.genererBateau();
     }
     //------------------------------------------------------------------------------------------------------------------
