@@ -66,7 +66,7 @@ public abstract class BateauGenerique {
         boolean tirReussi = false;
         for (int i = 0; i < this.getCoordonnees().length; i++) {
             if (this.getCoordonnees()[i].equals(tir)) {
-                System.out.println("T'as atteint le" + this.getClass().getName());//nom du navire atteint
+                System.out.println("T'as atteint le " + this.getClass().getSimpleName());//nom du navire atteint
                 this.vie--;
                 tirReussi = true;
                 break;
@@ -129,7 +129,7 @@ public abstract class BateauGenerique {
     //------------------------------------------------------------------------------------------------------------------
     @Override
     public String toString() {
-        return this.getClass().getName() + "[TAILLE=" + taille + ", direccion=" + direction
+        return this.getClass().getSimpleName() + "[TAILLE=" + taille + ", direccion=" + direction
                 + ", coordonnées=" + Arrays.toString(coordonnees) + "]";
     }
 }

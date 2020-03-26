@@ -35,7 +35,8 @@ public class Main {
         //Imprimer les bateaux
         champs.afficherBateaux();
 
-        while(!(bb.verifierQueBateauCoule() && inter.verifierQueBateauCoule() && pat.verifierQueBateauCoule() && porta.verifierQueBateauCoule() && sub.verifierQueBateauCoule())){
+        while(!(bb.verifierQueBateauCoule() && inter.verifierQueBateauCoule() && pat.verifierQueBateauCoule() &&
+                porta.verifierQueBateauCoule() && sub.verifierQueBateauCoule())){
             System.out.println("Donne coordonnee X");
             corX = t.nextInt();
             System.out.println("Donne coordonnee Y");
