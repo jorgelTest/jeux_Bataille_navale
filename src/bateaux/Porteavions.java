@@ -1,10 +1,10 @@
 package bateaux;
 
 
-import interfaceBateaux.ConstructionBateau;
+import interfaceBateaux.BateauGenerique;
 import static interfaceBateaux.TAILLES.PORTAVION;
 
-public class Porteavions extends ConstructionBateau {
+public class Porteavions extends BateauGenerique {
 
     public Porteavions(boolean direction) {
         super(direction);

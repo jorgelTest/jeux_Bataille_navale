@@ -5,7 +5,7 @@ import coordonnees.Coordonnee;
 import java.util.Arrays;
 import java.util.Random;
 
-public abstract class ConstructionBateau {
+public abstract class BateauGenerique {
     private Integer taille;
     private boolean direction;
     private Coordonnee[] coordonnees;
@@ -18,7 +18,7 @@ public abstract class ConstructionBateau {
      *
      * @param direction
      */
-    public ConstructionBateau(boolean direction) {
+    public BateauGenerique(boolean direction) {
         this.direction = direction;
         this.coordonnees = new Coordonnee[this.getTaille()];
         this.genererBateau();

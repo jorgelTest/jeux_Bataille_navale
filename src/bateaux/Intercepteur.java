@@ -1,9 +1,9 @@
 package bateaux;
 
-import interfaceBateaux.ConstructionBateau;
+import interfaceBateaux.BateauGenerique;
 import static interfaceBateaux.TAILLES.INTERCEPTEUR;
 
-public class Intercepteur extends ConstructionBateau {
+public class Intercepteur extends BateauGenerique {
 
     public Intercepteur(boolean direction) {
         super(direction);

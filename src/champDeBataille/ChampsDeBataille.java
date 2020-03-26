@@ -1,22 +1,22 @@
 package champDeBataille;
 
 import coordonnees.Coordonnee;
-import interfaceBateaux.InterfaceBateau;
+import interfaceBateaux.BateauGenerique;
 
 import java.util.ArrayList;
 
 public class ChampsDeBataille {
 
-    private ArrayList<InterfaceBateau> bateauxSurLeChamp;
+    private ArrayList<BateauGenerique> bateauxSurLeChamp;
     private ArrayList<Coordonnee> tirsReussis;
     private Coordonnee tir;
 
     public ChampsDeBataille() {
-        bateauxSurLeChamp = new ArrayList<InterfaceBateau>();
+        bateauxSurLeChamp = new ArrayList<>();
         tirsReussis = new ArrayList<Coordonnee>();
     }
 
-    public void ajouterBateau(InterfaceBateau barco) {
+    public void ajouterBateau(BateauGenerique barco) {
         this.bateauxSurLeChamp.add(barco);
     }
 
@@ -64,11 +64,11 @@ public class ChampsDeBataille {
         }
     }
 
-    public ArrayList<InterfaceBateau> getBateauxSurLeChamp() {
+    public ArrayList<BateauGenerique> getBateauxSurLeChamp() {
         return bateauxSurLeChamp;
     }
 
-    public void setBateauxSurLeChamp(ArrayList<InterfaceBateau> bateauxSurLeChamp) {
+    public void setBateauxSurLeChamp(ArrayList<BateauGenerique> bateauxSurLeChamp) {
         this.bateauxSurLeChamp = bateauxSurLeChamp;
     }
 
