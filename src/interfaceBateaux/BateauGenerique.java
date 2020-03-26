@@ -20,10 +20,23 @@ public abstract class BateauGenerique {
      */
     public BateauGenerique(boolean direction) {
         this.direction = direction;
+
+        if (this.getClass().getName().equals("Bateau")) {
+            this.setTaille(TAILLES.BATEAU.getTaille());
+        } else if (this.getClass().getName().equals("Intercepteur")) {
+            this.setTaille(TAILLES.INTERCEPTEUR.getTaille());
+        } else if (this.getClass().getName().equals("Patrouille")) {
+            this.setTaille(TAILLES.PATROUILLE.getTaille());
+        } else if (this.getClass().getName().equals("Porteavions")) {
+            this.setTaille(TAILLES.PORTAVION.getTaille());
+        } else {
+            this.setTaille(TAILLES.SOUSMARIN.getTaille());
+        }
         this.coordonnees = new Coordonnee[this.getTaille()];
         this.genererBateau();
     }
     //------------------------------------------------------------------------------------------------------------------
+
     /**
      * Position aléatoire d'un bateau
      */
