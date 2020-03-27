@@ -22,18 +22,18 @@ public abstract class BateauGenerique {
         this.direction = direction;
 
         if (this.getClass().getName().equals("Bateau")) {
-            this.setTaille(TAILLES.BATEAU.getTaille());
+            this.taille = TAILLES.BATEAU.getTaille();
         } else if (this.getClass().getName().equals("Intercepteur")) {
-            this.setTaille(TAILLES.INTERCEPTEUR.getTaille());
+            this.taille = TAILLES.INTERCEPTEUR.getTaille();
         } else if (this.getClass().getName().equals("Patrouille")) {
-            this.setTaille(TAILLES.PATROUILLE.getTaille());
+            this.taille = TAILLES.PATROUILLE.getTaille();
         } else if (this.getClass().getName().equals("Porteavions")) {
-            this.setTaille(TAILLES.PORTAVION.getTaille());
+            this.taille = TAILLES.PORTAVION.getTaille();
         } else {
-            this.setTaille(TAILLES.SOUSMARIN.getTaille());
+            this.taille = TAILLES.SOUSMARIN.getTaille();
         }
-        this.coordonnees = new Coordonnee[this.getTaille()];
-        this.setVie(this.getTaille());
+        this.coordonnees = new Coordonnee[this.taille];
+        this.vie = this.taille;
         this.genererBateau();
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -62,7 +62,6 @@ public abstract class BateauGenerique {
 
     //------------------------------------------------------------------------------------------------------------------
     public boolean verifierTir(Coordonnee tir) {
-        // TODO Auto-generated method stub
         boolean tirReussi = false;
         for (int i = 0; i < this.getCoordonnees().length; i++) {
             if (this.getCoordonnees()[i].equals(tir)) {
@@ -129,7 +128,7 @@ public abstract class BateauGenerique {
     //------------------------------------------------------------------------------------------------------------------
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "[TAILLE=" + taille + ", direccion=" + direction
+        return this.getClass().getSimpleName() + "[TAILLE=" + taille + ", direction=" + direction
                 + ", coordonnées=" + Arrays.toString(coordonnees) + "]";
     }
 }
